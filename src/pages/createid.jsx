@@ -16,7 +16,8 @@ export default function MyForm() {
   }
 
   return (
-    <div className="mt-5">
+    <div className="flex flex-row mx-6">
+      <div className="border">
        <h1>
       CREATE EVENT ID
     </h1>
@@ -34,6 +35,8 @@ export default function MyForm() {
       <button type="submit">Submit form</button>
     </form>
  <br/> <br/> <br/> <br/>
+ </div>
+<div>
 
       <h1>
       CREATE EVENT
@@ -80,6 +83,7 @@ export default function MyForm() {
 
       <button type="submit">Submit form</button>
     </form>
+    </div>
     </div>
   );
 }
