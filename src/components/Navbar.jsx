@@ -37,22 +37,22 @@ const Navbar = () => {
           isOpen ? "block" : "hidden"
         } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
       >
-        <div className="text-md ml-[500px]  lg:flex-grow">
+        <div className="text-md ml-[614px]  lg:flex-grow">
           <a
             href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-500 hover:text-white mr-20"
+            className="block mt-4 lg:inline-block lg:mt-0 text-gray-500 hover:text-white mr-10"
           >
             About
           </a>
-          <a
+          <a 
             href="#responsive-header"
-            className="block mt-4 lg:inline-block mr-20 lg:mt-0 text-gray-500 hover:text-white"
+            className="block mt-4 lg:inline-block mr-10 lg:mt-0 text-gray-500 hover:text-white"
           >
-            Documentation
+            Docs
           </a>
           <a
             href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-500 mr-10 hover:text-white"
+            className="block mt-4 lg:inline-block lg:mt-0 text-gray-500 mr-20 hover:text-white"
           >
             Developer
           </a>  
@@ -64,3 +64,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+

@@ -21,11 +21,9 @@ const ProfileDashboard = () => {
             />
 
             <h3 className=" mt-3 text-center text-[16px] leading-5">
-              Developer Vince
+             Event Creator
             </h3>
-            <p className="text-[12px] text-center mt-1 leading-4">
-              Web3 Developer
-            </p>
+           
           </div>
         </section>
         <section className="w-[80%] mt-5">
@@ -41,7 +39,7 @@ const ProfileDashboard = () => {
               </div>
               <div className="">
                 <h2 className="text-[22px] font-bold">1</h2>
-                <p className="">Completed Offer</p>
+                <p className="">Event created</p>
               </div>
             </div>
             <div className="w-[30%] h-[100px] flex gap-2 items-center bg-[white] rounded-lg pl-6">
