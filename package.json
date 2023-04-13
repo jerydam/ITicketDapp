@@ -1,0 +1,37 @@
+{
+  "name": "ITicket",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@babel/core": "^7.21.4",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@headlessui/react": "^1.7.13",
+    "@mui/material": "^5.11.16",
+    "@rainbow-me/rainbowkit": "^0.12.7",
+    "babel-preset-next": "^1.4.0",
+    "ethers": "^5.7.2",
+    "next": "^13.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-router": "^6.10.0",
+    "wagmi": "^0.12.10"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.35",
+    "@types/react": "^18.0.9",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.15.0",
+    "eslint-config-next": "^12.1.6",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1",
+    "typescript": "^4.9.4"
+  }
+}
