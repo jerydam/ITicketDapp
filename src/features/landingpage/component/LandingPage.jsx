@@ -11,16 +11,21 @@ const LandingPage = () => {
           
         
     <div class='flex flex-col bg-[#EFF2F9]'>
-  <div class="bg-cover bg-center landing-top-img flex flex-col bg-[#000000]">
-    <div class='flex flex-col md:flex-row md:justify-between md:items-center'>
+  <div class="bg-cover bg-center landing-top-img text-white flex flex-col bg-[#000000]">
   
-  <div class='flex mt-4 md:mt-0'>
-    <button class='ml-0 md:ml-10 font-semibold'>About</button>
-    <button class='ml-0 md:ml-10 font-semibold'>Documentation</button>
-    <button class='ml-0 md:ml-10 mr-0 md:mr-20 font-semibold'>Developer</button>
+ <div class='flex flex-col lg:flex-row lg:justify-between lg:items-center w-full justify-center px-4'>
+  <div class='flex mt-4 lg:mt-0'>
+    <img src="/ticket.png" alt="" />
+    <button id='toggle-btn' class='ml-0 lg:ml-[700px] hover:text-blue font-semibold'>About</button>
+    <button class='ml-0 lg:ml-10 font-semibold'>Documentation</button>
+    <button class='ml-0 lg:ml-10 mr-0 lg:mr-20 font-semibold'>Developer</button>
     <Connect/>
   </div>
 </div>
+
+  
+
+
 
 
     <div className="text-center z-[1] m-auto flex flex-col mt-[10vh]">
