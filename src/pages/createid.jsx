@@ -1,3 +1,4 @@
+import React from 'react';
 export default function MyForm() {
   function handleSubmit(e) {
     // Prevent the browser from reloading the page
@@ -16,72 +17,86 @@ export default function MyForm() {
   }
 
   return (
-    <div className="flex flex-row mx-6">
-      <div className="border">
+   
+    <div className="flex flex-row text-[#182507]  mx-6">
+       
+      <div className="bg-[#8f32e6] mt-10 ml-20 text-center mb-5  rounded-md justify-center w-[500px]"><br/><br/><br/><br/><br/>
        <h1>
       CREATE EVENT ID
     </h1>
     <form method="post" onSubmit={handleSubmit}>
      
             <label>
-        Registeration Id: <input type="text" placeholder="Id"/>
+        Registeration Id: <br/>
+        <input type="text" placeholder="Id"/>
       </label>
-      <hr />
+      <br/><br/><br/><br/>
       <label>
-        Event Admin: <input type="text" placeholder="wallet address"  />
+        Event Admin:<br/>
+         <input type="text" placeholder="wallet address"  />
       </label>
-      <hr />
+      <br/><br/><br/><br/>
 
-      <button type="submit">Submit form</button>
+       <button className="bg-[#370368] rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">Submit form</button>
     </form>
  <br/> <br/> <br/> <br/>
  </div>
-<div>
 
-      <h1>
+<div className="bg-[#8f32e6] mt-10 ml-40 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
+      <h1 className="font-bold text-center my-3 justify-center ">
       CREATE EVENT
     </h1>
     <form method="post" onSubmit={handleSubmit}>
      
         <label>
-        Registeration Id: <input type="text" placeholder="Id"/>
+        Registeration Id: <br/>
+        <input type="text" placeholder="Id"/>
       </label>
-      <br/>
+      <br/><br/>
       <label>
-        Number of Participant: <input type="number" placeholder="Event URI"  />
+        Number of Participant:<br/>
+         <input type="number" placeholder="N0 of participant"  />
       </label>
-     <br/>
+     <br/><br/>
         <label>
-      Event Start Time: <input type="number" placeholder="Event Name"/>
+      Event Start Time:<br/>
+       <input type="number" placeholder="reg. start time"/>
       </label>
-      <br/>
+      <br/><br/>
       <label>
-        Registeration Start time: <input type="number" placeholder="wallet address"  />
+        Registeration Start time:<br/>
+         <input type="number" placeholder="reg. start time"  />
       </label>
-     <br/>
+     <br/><br/>
         <label>
-        Registeration End time:: <input type="number" placeholder="Id"/>
+        Registeration End time::<br/> 
+        <input type="number" placeholder="reg. end time"/>
+
       </label>
-      <br/>
+      <br/><br/>
       <label>
-        Event End Time: <input type="text" placeholder="wallet address"  />
+        Event End Time:<br/>
+         <input type="text" placeholder="event end time"  />
       </label>
-     <br/>
+     <br/><br/>
         <label>
-        Event Fee: <input type="number" placeholder="Price"/>
+        Event Fee:<br/>
+         <input type="number" placeholder="Price"/>
       </label>
-      <br/>
+      <br/><br/>
       <label>
-        Event date: <input type="number" placeholder="wallet address"  />
+        Event date:<br/> 
+        <input type="number" placeholder="event date"  />
       </label>
-     <br/>
+     <br/><br/>
         <label>
-        Event Uri: <input type="text" placeholder="Id"/>
+        Event Uri:<br/>
+         <input type="text" placeholder="event uri"/>
       </label>
-      <br/>
+      <br/><br/>
          
 
-      <button type="submit">Submit form</button>
+      <button className="bg-[#370368] rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">Submit form</button>
     </form>
     </div>
     </div>
