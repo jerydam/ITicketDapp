@@ -272,7 +272,7 @@ console.log("My balance is: ", String(totalNoOfEvents));
       </label>
       <br/><br/>
 
-      <button className="bg-[green] text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{createEventIsLoading || createWaitIsLoading
+      <button className="bg-[green] border border-blue-300 text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{createEventIsLoading || createWaitIsLoading
           ? "Creating event..."
           : "Create Event"}</button>
     </form>
@@ -329,7 +329,7 @@ console.log("My balance is: ", String(totalNoOfEvents));
    <br/><br/>
  
  
-    <button className="bg-[green] text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{isLoadingStartEndRegistration || startWaitIsLoading
+    <button className="bg-[green] border border-blue-300 text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{isLoadingStartEndRegistration || startWaitIsLoading
         ? "Opening Registration..."
         : "Open Registration"}</button>
   </form>
