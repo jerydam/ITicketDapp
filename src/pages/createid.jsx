@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar"
 import {
   erc20ABI,
   useAccount,
+  useContractRead,
   useContractWrite,
   usePrepareContractWrite,
   useWaitForTransaction,
@@ -49,6 +50,15 @@ const handleSubmit = (e) => {
     event?.();
   };
 
+const {
+    data: ReturntotalnumberofEvent,
+    isLoading: numberOfEventIsLoading,
+    isError: numberIsError,
+  } = useContractRead({
+    address: "0x8197Ac59CbC142236bdAb2C91d420A528c592750",
+    abi: ticketAbi,
+    functionName: "returnTotalNoOfEvents",
+  });
 
 
 
@@ -57,13 +67,14 @@ const handleSubmit = (e) => {
   return (
  <div> 
     <Navbar/> 
+    <div>{ReturntotalnumberofEvent}</div>
     <div className="flex flex-row text-[#182507]  mx-6">
       
       <div className="bg-[#8f32e6] mt-10 ml-20 text-center mb-5  rounded-md justify-center w-[500px]"><br/><br/><br/><br/><br/>
        <h1>
       CREATE EVENT ID
     </h1>
-    <form method="post" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
      
             <label>
         Registeration Id: <br/>
