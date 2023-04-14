@@ -25,38 +25,38 @@ const [symbol, setSymbol] = useState("");
 const [poapName, setPoapName] = useState("");
 const [poapSymbol, setPoapSymbol] = useState("");
 
-const { config } = usePrepareContractWrite({
-    address: CONTRACT,
-    abi: ticketAbi,
-    functionName: "createID",
-    args: [regId, eventadminAddr ],
-  });
-const { data: eventData,isLoading:eventIsLoading, write: event } = useContractWrite(config);
+// const { config } = usePrepareContractWrite({
+//     address: CONTRACT,
+//     abi: ticketAbi,
+//     functionName: "createID",
+//     args: [regId, eventadminAddr ],
+//   });
+// const { data: eventData,isLoading:eventIsLoading, write: event } = useContractWrite(config);
   
-const { data: eventWaitData, isLoading: eventWaitIsLoading } =
-    useWaitForTransaction({
-      data: eventData?.hash,
+// const { data: eventWaitData, isLoading: eventWaitIsLoading } =
+//     useWaitForTransaction({
+//       data: eventData?.hash,
 
-      onSuccess(data) {
-        console.log("IT IS SUCCESSFUL: ", data);
-      },
+//       onSuccess(data) {
+//         console.log("IT IS SUCCESSFUL: ", data);
+//       },
 
-      onError(error) {
-        console.log("Encountered error: ", error);
-      },
-    });
+//       onError(error) {
+//         console.log("Encountered error: ", error);
+//       },
+//     });
 
-    useEffect(() => {
-    if (eventData) {
-      console.log(eventData);
-    }
-  }, [eventData]);
+//     useEffect(() => {
+//     if (eventData) {
+//       console.log(eventData);
+//     }
+//   }, [eventData]);
 
-const handleSubmit = (e) => {
-    e.preventDefault();
+// const handleSubmit = (e) => {
+//     e.preventDefault();
 
-    event?.();
-  };
+//     event?.();
+//   };
 
 
 
@@ -119,7 +119,7 @@ const {
     
     <div className="flex flex-row text-[#182507]  mx-6">
       
-      <div className="bg-[#8f32e6] mt-10 ml-20 text-center mb-5  rounded-md justify-center w-[500px]"><br/><br/><br/><br/><br/>
+      {/* <div className="bg-[#8f32e6] mt-10 ml-20 text-center mb-5  rounded-md justify-center w-[500px]"><br/><br/><br/><br/><br/>
        <h1>
       CREATE EVENT ID
     </h1>
@@ -141,7 +141,7 @@ const {
           : "Create ID"}</button>
     </form>
  <br/> <br/> <br/> <br/>
- </div>
+ </div> */}
 
 
 
