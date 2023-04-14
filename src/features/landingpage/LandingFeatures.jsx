@@ -1,13 +1,10 @@
 import React from 'react'
-import LandingPage from './components/LandingPage'
-import JobAdvert from './components/JobAdvert'
-
+import LandingPage from './component/LandingPage'
 const LandingFeatures = () => {
   return (
     <div>
        <LandingPage/>
-       <JobAdvert/>
-    </div>
+           </div>
   )
 }
 
