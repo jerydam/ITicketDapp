@@ -10,15 +10,19 @@ import {
 } from "wagmi";
 import { useState, useEffect} from "react";
 import ticketAbi from "../utils/ticketFactoryAbi.json";
+import childTicket from "../utils/iticketAbi.json";
 
   
 export default function MyForm() {
 const CONTRACT = '0x8197Ac59CbC142236bdAb2C91d420A528c592750';
+const CHILDCONTRACT = '0xfc1382A029A214e720B534A68A30F1d2f33280Bd';
 const [eventadminAddr, setEventadminAddr] = useState();
 const [regId, setRegId] = useState(null);
 const [Id, setId] = useState(null);
 const [fee, setFee] = useState(null);
 const [numberOfPart, setNumberOfPart] = useState(null);
+const [startTime, setStartTime] = useState(null);
+const [endTime, setEndTime] = useState(null);
 const [eventUri, setEventUri] = useState("");
 const [name, setName] = useState("");
 const [symbol, setSymbol] = useState("");
@@ -93,6 +97,7 @@ const { data: createWaitData, isLoading: createWaitIsLoading } =
     }
   }, [createEventData]);
 
+
 const handleSubmit2 = (e) => {
     e.preventDefault();
 
@@ -110,6 +115,55 @@ const {
   });
 
 
+  useEffect(() => {
+    const evt = toString(ReturntotalnumberofEvent)
+    if (evt) {
+      console.log(evt);
+    }
+  }, [ReturntotalnumberofEvent]);
+
+
+  
+
+//===================================================
+//==================================================
+//===================================================
+
+const { config: config3 } = usePrepareContractWrite({
+  address: CHILDCONTRACT,
+  abi: childTicket,
+  functionName: "startRegistration",
+  args: [startTime, endTime],
+});
+const { data: startEndRegistration, isLoading: isLoadingStartEndRegistration, write: startReg } = useContractWrite(config3);
+
+const { data: startWaitData, isLoading: startWaitIsLoading } =
+  useWaitForTransaction({
+    data: startEndRegistration?.hash,
+
+    onSuccess(data) {
+      console.log("IT IS SUCCESSFUL: ", data);
+    },
+
+    onError(error) {
+      console.log("Encountered error: ", error);
+    },
+  });
+
+  useEffect(() => {
+  if (startEndRegistration) {
+    console.log(startEndRegistration);
+  }
+}, [startEndRegistration]);
+
+
+const handleSubmit3 = (e) => {
+  e.preventDefault();
+
+  startReg?.();
+};
+
+
 
 
 
@@ -118,33 +172,7 @@ const {
     <Navbar/> 
     
     <div className="flex flex-row text-[#182507]  mx-6">
-      
-      {/* <div className="bg-[#8f32e6] mt-10 ml-20 text-center mb-5  rounded-md justify-center w-[500px]"><br/><br/><br/><br/><br/>
-       <h1>
-      CREATE EVENT ID
-    </h1>
-    <form onSubmit={handleSubmit}>
-     
-            <label>
-        Registeration Id: <br/>
-        <input type="text" placeholder="Id" onChange={(e) => setRegId(e.target.value)}/>
-      </label>
-      <br/><br/><br/><br/>
-      <label>
-        Event Admin:<br/>
-         <input type="text" placeholder="wallet address" onChange={(e) => setEventadminAddr(e.target.value)}/>
-      </label>
-      <br/><br/><br/><br/>
-
-       <button className="bg-[#370368] rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{eventIsLoading || eventWaitIsLoading
-          ? "Creating event ID..."
-          : "Create ID"}</button>
-    </form>
- <br/> <br/> <br/> <br/>
- </div> */}
-
-
-
+      <h1>Create an Event Below</h1>
 
 <div className="bg-[#8f32e6] mt-10 ml-40 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
       <h1 className="font-bold text-center my-3 justify-center ">
@@ -156,6 +184,8 @@ const {
         Registeration Id: <br/>
         <input type="text" placeholder="Id"  onChange={(e) => setId(e.target.value)}/>
       </label>
+
+
       <br/><br/>
       <label>
         Number of Participant:<br/>
@@ -174,6 +204,7 @@ const {
          <input type="text" placeholder="event uri"  onChange={(e) => setEventUri(e.target.value)}/>
       </label>
       <br/><br/>
+
       <label>
         Name:<br/>
          <input type="text" placeholder="name"  onChange={(e) => setName(e.target.value)}/>
@@ -199,8 +230,67 @@ const {
           ? "Creating event..."
           : "Create Event"}</button>
     </form>
+
+        
     </div>
     </div>
+
+
+
+
+
+ 
+
+        <div className="flex flex-row text-[#182507]  mx-6">
+         
+          <div className="bg-[#8f32e6] mt-10 ml-40 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
+          <h1 className="font-bold text-center my-3 justify-center ">
+             Open Registration
+        </h1>
+
+        <form onSubmit={handleSubmit3}>
+      
+      <label>
+      Event-Start-time: <br/>
+      <input type="time" placeholder="Enter time the event commences (HH:mm:ss)"  onChange={(e) => {
+             const timeString = e.target.value;
+             const date = new Date(`1970-01-01T${timeString}:00Z`);
+             const unixTimestamp = Math.floor(date.getTime() / 1000);
+             console.log(unixTimestamp);
+             setStartTime(unixTimestamp);
+      }
+        
+        
+        }/>
+    </label>
+ 
+ 
+    <br/><br/>
+    <label>
+    Event-End-time:<br/>
+    <input type="time" placeholder="Enter time the event ends (HH:mm:ss)"  onChange={(e) => {
+            const timeString = e.target.value;
+            const date = new Date(`1970-01-01T${timeString}:00Z`);
+            const unixTimestamp = Math.floor(date.getTime() / 1000);
+            console.log(unixTimestamp);
+            setEndTime(unixTimestamp);
+      }
+        
+        
+        }/>
+    </label>
+   
+   <br/><br/>
+ 
+ 
+    <button className="bg-[#370368] rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{isLoadingStartEndRegistration || startWaitIsLoading
+        ? "Opening Registration..."
+        : "Open Registration"}</button>
+  </form>
+
+
+          </div>
+        </div>
         </div>
   );
 }
