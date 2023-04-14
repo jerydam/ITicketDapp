@@ -8,11 +8,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-gray-900 p-6">
+    <nav className="flex items-center justify-between flex-wrap">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
       
-        <span className="font-semibold text-xl p-2 rounded-md bg-[#bcd8d6] text-[#000000] tracking-tight ml-2">
-          ITICKET
+        <span className="font-bold text-xl text-[#fff] tracking-tight ml-2">
+            <span className="text-5xl text-red">.</span>METASQUARE
         </span>
       </div>
       <div className="block lg:hidden">

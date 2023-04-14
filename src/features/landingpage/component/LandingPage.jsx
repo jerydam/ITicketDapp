@@ -22,13 +22,13 @@ const LandingPage = () => {
 
 
 
-    <div className="text-center z-[1] m-auto flex flex-col mt-[10vh]">
-      <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">Create and Register Events with iTicket</h1>
-      <p className="text-white text-xl md:text-2xl lg:text-3xl mt-3">Revolutionize the Way You Host and Attend Events</p>
+    <div className="text-center z-[1] m-auto flex flex-col justify-center items-center mt-[10vh]">
+      <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">Re-Imagine The Future of Events</h1>
+      <p className="text-white text-xl md:text-2xl lg:text-3xl mt-3">innovative NEW ways to connect with your audience</p>
 
       <div className='flex flex-col md:flex-row mt-10'>
         <Link href="/createid">
-          <button className="bg-light-blue mt-4 md:mt-8 lg:mt-10 rounded-md py-3 px-6 text-lg lg:text-xl hover:bg-[#052C5B] hover:text-white" type="submit">Create Event</button>
+          <button className="bg-[#01022e] border border-[#a5fafd] mt-4 md:mt-8 lg:mt-10 rounded-md py-3 px-6 text-lg lg:text-xl hover:bg-[#052C5B] hover:text-white" type="submit">Create Event</button>
         </Link>
       </div>
     </div>
