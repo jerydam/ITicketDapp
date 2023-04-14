@@ -25,44 +25,38 @@ const [symbol, setSymbol] = useState("");
 const [poapName, setPoapName] = useState("");
 const [poapSymbol, setPoapSymbol] = useState("");
 
-// const { config } = usePrepareContractWrite({
-//     address: CONTRACT,
-//     abi: ticketAbi,
-//     functionName: "createID",
-//     args: [regId, eventadminAddr ],
-//   });
-// const { data: eventData,isLoading:eventIsLoading, write: event } = useContractWrite(config);
+const { config } = usePrepareContractWrite({
+    address: CONTRACT,
+    abi: ticketAbi,
+    functionName: "createID",
+    args: [regId, eventadminAddr ],
+  });
+const { data: eventData,isLoading:eventIsLoading, write: event } = useContractWrite(config);
   
-// const { data: eventWaitData, isLoading: eventWaitIsLoading } =
-//     useWaitForTransaction({
-//       data: eventData?.hash,
+const { data: eventWaitData, isLoading: eventWaitIsLoading } =
+    useWaitForTransaction({
+      data: eventData?.hash,
 
-//       onSuccess(data) {
-//         console.log("IT IS SUCCESSFUL: ", data);
-//       },
+      onSuccess(data) {
+        console.log("IT IS SUCCESSFUL: ", data);
+      },
 
-//       onError(error) {
-//         console.log("Encountered error: ", error);
-//       },
-//     });
+      onError(error) {
+        console.log("Encountered error: ", error);
+      },
+    });
 
-//     useEffect(() => {
-//     if (eventData) {
-//       console.log(eventData);
-//     }
-//   }, [eventData]);
+    useEffect(() => {
+    if (eventData) {
+      console.log(eventData);
+    }
+  }, [eventData]);
 
-// const handleSubmit = (e) => {
-//     e.preventDefault();
+const handleSubmit = (e) => {
+    e.preventDefault();
 
-//     event?.();
-//   };
-
-
-
-
-
-
+    event?.();
+  };
 
 
 
@@ -114,34 +108,34 @@ const {
 
 
   return (
- <div> 
+ <div className='bg-[#06001d]'> 
     <Navbar/> 
     
-    <div className="flex flex-row text-[#182507]  mx-6">
+    <div className="flex flex-row text-[#182507]   mx-6">
       
-      {/* <div className="bg-[#8f32e6] mt-10 ml-20 text-center mb-5  rounded-md justify-center w-[500px]"><br/><br/><br/><br/><br/>
-       <h1>
+      <div className="bg-[#0a0213] border border-white mt-10 ml-20 text-center mb-5  rounded-md justify-center w-[500px]"><br/><br/><br/><br/><br/>
+       <h1 className='text-white font-semibold p-2 text-xl'>
       CREATE EVENT ID
     </h1>
     <form onSubmit={handleSubmit}>
      
-            <label>
-        Registeration Id: <br/>
-        <input type="text" placeholder="Id" onChange={(e) => setRegId(e.target.value)}/>
+      <label className='text-white text-xl'>
+        Reg. ID: <br/>
+        <input type="text" placeholder="enter unique ID" onChange={(e) => setRegId(e.target.value)} className='py-3 px-1 rounded-lg'/>
       </label>
       <br/><br/><br/><br/>
-      <label>
+      <label className='text-white text-xl'>
         Event Admin:<br/>
-         <input type="text" placeholder="wallet address" onChange={(e) => setEventadminAddr(e.target.value)}/>
+         <input type="text" placeholder="wallet address" onChange={(e) => setEventadminAddr(e.target.value)} className='py-3 px-1 rounded-lg'/>
       </label>
       <br/><br/><br/><br/>
 
-       <button className="bg-[#370368] rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{eventIsLoading || eventWaitIsLoading
+       <button className="bg-[#ebdcfa] text-[#19072b] text-lg font-bold rounded-md py-3 px-8 hover:bg-[#8f8499] hover:text-white border-radius mb-5" type="submit">{eventIsLoading || eventWaitIsLoading
           ? "Creating event ID..."
           : "Create ID"}</button>
     </form>
  <br/> <br/> <br/> <br/>
- </div> */}
+ </div>
 
 
 
@@ -154,44 +148,44 @@ const {
      
         <label>
         Registeration Id: <br/>
-        <input type="text" placeholder="Id"  onChange={(e) => setId(e.target.value)}/>
+        <input type="text" placeholder="Registration ID"  onChange={(e) => setId(e.target.value)}/>
       </label>
       <br/><br/>
       <label>
         Number of Participant:<br/>
-         <input type="number" placeholder="N0 of participant"  onChange={(e) => setNumberOfPart(e.target.value)}/>
+         <input type="number" placeholder="No of participants"  onChange={(e) => setNumberOfPart(e.target.value)}/>
       </label>
      
      <br/><br/>
         <label>
         Event Fee:<br/>
-         <input type="number" placeholder="Price"  onChange={(e) => setFee(e.target.value)}/>
+         <input type="number" placeholder="Enter zero if event is FREE"  onChange={(e) => setFee(e.target.value)}/>
       </label>
       
      <br/><br/>
         <label>
         Event Uri:<br/>
-         <input type="text" placeholder="event uri"  onChange={(e) => setEventUri(e.target.value)}/>
+         <input type="text" placeholder="Event uri"  onChange={(e) => setEventUri(e.target.value)}/>
       </label>
       <br/><br/>
       <label>
         Name:<br/>
-         <input type="text" placeholder="name"  onChange={(e) => setName(e.target.value)}/>
+         <input type="text" placeholder="NFT title"  onChange={(e) => setName(e.target.value)}/>
       </label>
       <br/><br/>
       <label>
         symbol:<br/>
-         <input type="text" placeholder="sympol"  onChange={(e) => setSymbol(e.target.value)}/>
+         <input type="text" placeholder="NFT symbol"  onChange={(e) => setSymbol(e.target.value)}/>
       </label>
       <br/><br/>
       <label>
         poap Name:<br/>
-         <input type="text" placeholder="poap name"  onChange={(e) => setPoapName(e.target.value)}/>
+         <input type="text" placeholder="Attendance NFT name"  onChange={(e) => setPoapName(e.target.value)}/>
       </label>
       <br/><br/>
       <label>
         poap symbol:<br/>
-         <input type="text" placeholder="poap symbol" onChange={(e) => setPoapSymbol(e.target.value)}/>
+         <input type="text" placeholder="Attendance NFT symbol" onChange={(e) => setPoapSymbol(e.target.value)}/>
       </label>
       <br/><br/>
 
