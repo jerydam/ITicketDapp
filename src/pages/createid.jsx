@@ -64,7 +64,7 @@ const [poapSymbol, setPoapSymbol] = useState("");
 
 
 
-
+//rrrr
 
   const { config: config2 } = usePrepareContractWrite({
     address: CONTRACT,
