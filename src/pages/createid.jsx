@@ -11,6 +11,7 @@ import {
 import { useState, useEffect} from "react";
 import ticketAbi from "../utils/ticketFactoryAbi.json";
 
+
   
 export default function MyForm() {
 const CONTRACT = '0x8197Ac59CbC142236bdAb2C91d420A528c592750';
@@ -31,6 +32,7 @@ const { config } = usePrepareContractWrite({
     functionName: "createID",
     args: [regId, eventadminAddr ],
   });
+
 const { data: eventData,isLoading:eventIsLoading, write: event } = useContractWrite(config);
   
 const { data: eventWaitData, isLoading: eventWaitIsLoading } =
@@ -121,13 +123,13 @@ const {
      
       <label className='text-white text-xl'>
         Reg. ID: <br/>
-        <input type="text" placeholder="enter unique ID" onChange={(e) => setRegId(e.target.value)} className='py-3 px-1 rounded-lg'/>
       </label>
+        <input type="text" placeholder="enter unique ID" onChange={(e) => setRegId(e.target.value)} className='py-3 px-1 rounded-lg'/>
       <br/><br/><br/><br/>
       <label className='text-white text-xl'>
         Event Admin:<br/>
-         <input type="text" placeholder="wallet address" onChange={(e) => setEventadminAddr(e.target.value)} className='py-3 px-1 rounded-lg'/>
       </label>
+         <input type="text" placeholder="wallet address" onChange={(e) => setEventadminAddr(e.target.value)} className='py-3 px-1 rounded-lg'/>
       <br/><br/><br/><br/>
 
        <button className="bg-[#ebdcfa] text-[#19072b] text-lg font-bold rounded-md py-3 px-8 hover:bg-[#8f8499] hover:text-white border-radius mb-5" type="submit">{eventIsLoading || eventWaitIsLoading
@@ -174,17 +176,17 @@ const {
       </label>
       <br/><br/>
       <label>
-        symbol:<br/>
+        Symbol:<br/>
          <input type="text" placeholder="NFT symbol"  onChange={(e) => setSymbol(e.target.value)}/>
       </label>
       <br/><br/>
       <label>
-        poap Name:<br/>
+        Poap Name:<br/>
          <input type="text" placeholder="Attendance NFT name"  onChange={(e) => setPoapName(e.target.value)}/>
       </label>
       <br/><br/>
       <label>
-        poap symbol:<br/>
+        Poap symbol:<br/>
          <input type="text" placeholder="Attendance NFT symbol" onChange={(e) => setPoapSymbol(e.target.value)}/>
       </label>
       <br/><br/>

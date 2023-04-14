@@ -13,7 +13,7 @@ const Navbar = () => {
       
         <span className="font-bold text-xl text-[#fff] tracking-tight ml-2">
             <span className="text-5xl text-red">.</span>METASQUARE
-        </span>
+        </span> 
       </div>
       <div className="block lg:hidden">
         <button

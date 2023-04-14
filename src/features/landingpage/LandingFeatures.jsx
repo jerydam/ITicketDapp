@@ -4,7 +4,7 @@ const LandingFeatures = () => {
   return (
     <div>
        <LandingPage/>
-           </div>
+    </div>
   )
 }
 
