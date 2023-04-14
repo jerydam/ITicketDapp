@@ -1,25 +1,64 @@
 import React from 'react';
+import Navbar from "../components/Navbar"
+import {
+  erc20ABI,
+  useAccount,
+  useContractWrite,
+  usePrepareContractWrite,
+  useWaitForTransaction,
+} from "wagmi";
+import { useState, useEffect} from "react";
+import ticketAbi from "../utils/ticketFactoryAbi.json";
+
+  
 export default function MyForm() {
-  function handleSubmit(e) {
-    // Prevent the browser from reloading the page
+const CONTRACT = '0x8197Ac59CbC142236bdAb2C91d420A528c592750';
+const [eventadminAddr, setEventadminAddr] = useState();
+const [regId, setRegId] = useState(null);
+
+const { config } = usePrepareContractWrite({
+    address: CONTRACT,
+    abi: ticketAbi,
+    functionName: "createID",
+    args: [regId, eventadminAddr ],
+  });
+const { data: eventData,isLoading:eventIsLoading, write: event } = useContractWrite(config);
+  
+const { data: eventWaitData, isLoading: eventWaitIsLoading } =
+    useWaitForTransaction({
+      data: eventData?.hash,
+
+      onSuccess(data) {
+        console.log("IT IS SUCCESSFUL: ", data);
+      },
+
+      onError(error) {
+        console.log("Encountered error: ", error);
+      },
+    });
+
+    useEffect(() => {
+    if (eventData) {
+      console.log(eventData);
+    }
+  }, [eventData]);
+
+const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Read the form data
-    const form = e.target;
-    const formData = new FormData(form);
+    event?.();
+  };
 
-    // You can pass formData as a fetch body directly:
-    fetch('/some-api', { method: form.method, body: formData });
 
-    // Or you can work with it as a plain object:
-    const formJson = Object.fromEntries(formData.entries());
-    console.log(formJson);
-  }
+
+
+
 
   return (
-   
+ <div> 
+    <Navbar/> 
     <div className="flex flex-row text-[#182507]  mx-6">
-       
+      
       <div className="bg-[#8f32e6] mt-10 ml-20 text-center mb-5  rounded-md justify-center w-[500px]"><br/><br/><br/><br/><br/>
        <h1>
       CREATE EVENT ID
@@ -28,16 +67,18 @@ export default function MyForm() {
      
             <label>
         Registeration Id: <br/>
-        <input type="text" placeholder="Id"/>
+        <input type="text" placeholder="Id" onChange={(e) => setRegId(e.target.value)}/>
       </label>
       <br/><br/><br/><br/>
       <label>
         Event Admin:<br/>
-         <input type="text" placeholder="wallet address"  />
+         <input type="text" placeholder="wallet address" onChange={(e) => setEventadminAddr(e.target.value)}/>
       </label>
       <br/><br/><br/><br/>
 
-       <button className="bg-[#370368] rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">Submit form</button>
+       <button className="bg-[#370368] rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{eventIsLoading || eventWaitIsLoading
+          ? "Creating event ID..."
+          : "Create ID"}</button>
     </form>
  <br/> <br/> <br/> <br/>
  </div>
@@ -100,5 +141,6 @@ export default function MyForm() {
     </form>
     </div>
     </div>
+        </div>
   );
 }
