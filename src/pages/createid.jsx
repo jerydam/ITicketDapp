@@ -221,58 +221,58 @@ console.log("My balance is: ", String(totalNoOfEvents));
       
 
 <div className="bg-[#8f32e6] mt-10 ml-40 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
-      <h1 className="font-bold text-center my-3 justify-center ">
+      <h1 className="text-white font-bold text-center my-3 justify-center ">
       CREATE EVENT
     </h1>
     <form onSubmit={handleSubmit2}>
      
         <label>
         Registeration Id: <br/>
-        <input type="text" placeholder="Id"  onChange={(e) => setId(e.target.value)}/>
+        <input className="p-2 border border-orange-400" type="text" placeholder="Id"  onChange={(e) => setId(e.target.value)}/>
       </label>
 
 
       <br/><br/>
       <label>
         Number of Participant:<br/>
-         <input type="number" placeholder="N0 of participant"  onChange={(e) => setNumberOfPart(e.target.value)}/>
+         <input className="p-2 border border-orange-400" type="number" placeholder="N0 of participant"  onChange={(e) => setNumberOfPart(e.target.value)}/>
       </label>
      
      <br/><br/>
         <label>
         Event Fee:<br/>
-         <input type="number" placeholder="Price"  onChange={(e) => setFee(e.target.value)}/>
+         <input className="p-2 border border-orange-400" type="number" placeholder="Price"  onChange={(e) => setFee(e.target.value)}/>
       </label>
       
      <br/><br/>
         <label>
         Event Uri:<br/>
-         <input type="text" placeholder="event uri"  onChange={(e) => setEventUri(e.target.value)}/>
+         <input className="p-2 border border-orange-400" type="text" placeholder="event uri"  onChange={(e) => setEventUri(e.target.value)}/>
       </label>
       <br/><br/>
 
       <label>
         Name:<br/>
-         <input type="text" placeholder="name"  onChange={(e) => setName(e.target.value)}/>
+         <input className="p-2 border border-orange-400" type="text" placeholder="name"  onChange={(e) => setName(e.target.value)}/>
       </label>
       <br/><br/>
       <label>
         symbol:<br/>
-         <input type="text" placeholder="sympol"  onChange={(e) => setSymbol(e.target.value)}/>
+         <input className="p-2 border border-orange-400" type="text" placeholder="sympol"  onChange={(e) => setSymbol(e.target.value)}/>
       </label>
       <br/><br/>
       <label>
         poap Name:<br/>
-         <input type="text" placeholder="poap name"  onChange={(e) => setPoapName(e.target.value)}/>
+         <input className="p-2 border border-orange-400" type="text" placeholder="poap name"  onChange={(e) => setPoapName(e.target.value)}/>
       </label>
       <br/><br/>
       <label>
         poap symbol:<br/>
-         <input type="text" placeholder="poap symbol" onChange={(e) => setPoapSymbol(e.target.value)}/>
+         <input className="p-2 border border-orange-400" type="text" placeholder="poap symbol" onChange={(e) => setPoapSymbol(e.target.value)}/>
       </label>
       <br/><br/>
 
-      <button className="bg-[#370368] rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{createEventIsLoading || createWaitIsLoading
+      <button className="bg-[green] text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{createEventIsLoading || createWaitIsLoading
           ? "Creating event..."
           : "Create Event"}</button>
     </form>
@@ -290,7 +290,7 @@ console.log("My balance is: ", String(totalNoOfEvents));
         <div className="flex flex-row text-[#182507]  mx-6">
          
           <div className="bg-[#8f32e6] mt-10 ml-40 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
-          <h1 className="font-bold text-center my-3 justify-center ">
+          <h1 className="text-white font-bold text-center my-3 justify-center ">
              Open Registration
         </h1>
 
@@ -298,7 +298,7 @@ console.log("My balance is: ", String(totalNoOfEvents));
       
       <label>
       Event-Start-time: <br/>
-      <input type="time" placeholder="Enter time the event commences (HH:mm:ss)"  onChange={(e) => {
+      <input className="p-2 border border-orange-400" type="time" placeholder="Enter time the event commences (HH:mm:ss)"  onChange={(e) => {
              const timeString = e.target.value;
              const date = new Date(`1970-01-01T${timeString}:00Z`);
              const unixTimestamp = Math.floor(date.getTime() / 1000);
@@ -313,8 +313,8 @@ console.log("My balance is: ", String(totalNoOfEvents));
  
     <br/><br/>
     <label>
-    Event-End-time:<br/>
-    <input type="time" placeholder="Enter time the event ends (HH:mm:ss)"  onChange={(e) => {
+   <p>Event-End-time:</p> 
+    <input className="p-2 border border-orange-400" type="time" placeholder="Enter time the event ends (HH:mm:ss)"  onChange={(e) => {
             const timeString = e.target.value;
             const date = new Date(`1970-01-01T${timeString}:00Z`);
             const unixTimestamp = Math.floor(date.getTime() / 1000);
@@ -329,7 +329,7 @@ console.log("My balance is: ", String(totalNoOfEvents));
    <br/><br/>
  
  
-    <button className="bg-[#370368] rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{isLoadingStartEndRegistration || startWaitIsLoading
+    <button className="bg-[green] text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{isLoadingStartEndRegistration || startWaitIsLoading
         ? "Opening Registration..."
         : "Open Registration"}</button>
   </form>
@@ -347,17 +347,14 @@ console.log("My balance is: ", String(totalNoOfEvents));
 <div className="flex flex-row text-[#182507]  mx-6">
          
          <div className="bg-[#8f32e6] mt-10 ml-40 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
-         <h1 className="font-bold text-center my-3 justify-center ">
+         <h1 className="text-white font-bold text-center my-3 justify-center ">
             End Registration
        </h1>
 
   <form onSubmit={handleSubmit4}>
      
-     
-        <br/><br/>
 
-
-   <button className="bg-[#370368] rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{isLoadingEndRegistration || endWaitIsLoading
+   <button className="bg-[green] border border-blue-300 text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{isLoadingEndRegistration || endWaitIsLoading
        ? "Ending Registration..."
        : "End Registration"}</button>
  </form>
