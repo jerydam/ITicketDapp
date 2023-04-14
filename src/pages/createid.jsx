@@ -76,7 +76,7 @@ const { data: createEventData,isLoading:createEventIsLoading, write: create } = 
   
 const { data: createWaitData, isLoading: createWaitIsLoading } =
     useWaitForTransaction({
-      data: createData?.hash,
+      data: createEventData?.hash,
 
       onSuccess(data) {
         console.log("IT IS SUCCESSFUL: ", data);
@@ -88,10 +88,10 @@ const { data: createWaitData, isLoading: createWaitIsLoading } =
     });
 
     useEffect(() => {
-    if (createData) {
-      console.log(createData);
+    if (createEventData) {
+      console.log(createEventData);
     }
-  }, [createData]);
+  }, [createEventData]);
 
 const handleSubmit2 = (e) => {
     e.preventDefault();
