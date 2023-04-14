@@ -200,16 +200,25 @@ const handleSubmit4 = (e) => {
   endReg?.();
 };
 
+const { data: totalNoOfEvents, isLoading: totalNoOfEventsiSlOADING } = useContractRead({
+  address: CONTRACT,
+  abi: ticketAbi,
+  functionName: "returnTotalNoOfEvents",
+});
 
 
+console.log("My balance is: ", String(totalNoOfEvents));
 
 
   return (
  <div> 
     <Navbar/> 
+    <div>
+      <h1 className="font-bold text-center my-3 justify-center ">Total Number Of Events created: {String(totalNoOfEvents)}</h1>
+    </div>
     
     <div className="flex flex-row text-[#182507]  mx-6">
-      <h1>Create an Event Below</h1>
+      
 
 <div className="bg-[#8f32e6] mt-10 ml-40 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
       <h1 className="font-bold text-center my-3 justify-center ">
