@@ -164,6 +164,43 @@ const handleSubmit3 = (e) => {
 };
 
 
+//=====================================================
+///=====================================================
+
+const { config: config4 } = usePrepareContractWrite({
+  address: CHILDCONTRACT,
+  abi: childTicket,
+  functionName: "endRegistration",
+});
+const { data: EndRegistration, isLoading: isLoadingEndRegistration, write: endReg } = useContractWrite(config4);
+
+const { data: endWaitData, isLoading: endWaitIsLoading } =
+  useWaitForTransaction({
+    data: EndRegistration?.hash,
+
+    onSuccess(data) {
+      console.log("IT IS SUCCESSFUL: ", data);
+    },
+
+    onError(error) {
+      console.log("Encountered error: ", error);
+    },
+  });
+
+  useEffect(() => {
+  if (EndRegistration) {
+    console.log(EndRegistration);
+  }
+}, [EndRegistration]);
+
+
+const handleSubmit4 = (e) => {
+  e.preventDefault();
+
+  endReg?.();
+};
+
+
 
 
 
@@ -291,6 +328,34 @@ const handleSubmit3 = (e) => {
 
           </div>
         </div>
+
+
+
+//=========================================================
+//=========================================================
+
+
+<div className="flex flex-row text-[#182507]  mx-6">
+         
+         <div className="bg-[#8f32e6] mt-10 ml-40 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
+         <h1 className="font-bold text-center my-3 justify-center ">
+            End Registration
+       </h1>
+
+  <form onSubmit={handleSubmit4}>
+     
+     
+        <br/><br/>
+
+
+   <button className="bg-[#370368] rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5" type="submit">{isLoadingEndRegistration || endWaitIsLoading
+       ? "Ending Registration..."
+       : "End Registration"}</button>
+ </form>
+
+
+         </div>
+       </div>
         </div>
   );
 }
