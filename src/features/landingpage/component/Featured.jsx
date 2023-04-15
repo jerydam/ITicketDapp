@@ -22,7 +22,7 @@ const Featured = (prop) => {
   };
 
   return (
-    <div className="mt-10 mb-10 w-full lg:w-[23%] rounded-lg pb-10 bg-[#EFF2F9]">
+    <div className="mt-10 mb-10 w-full lg:w-[23%] rounded-lg pb-10 bg-[#EFF2F9]" >
       <img src={prop.imgSrc} className="w-full h-3/5 rounded-t-lg" />
       <div className="flex justify-between w-full">
         <div className="flex w-full">
@@ -38,8 +38,8 @@ const Featured = (prop) => {
         </div>
        
       </div>
-      <div className="w-full">
-        <div></div>
+      <div className="w-full" >
+        
         <h2 className="text-fair-blue text-[16px] leading-[18px] font-bold px-4">{prop.skill}</h2>
         <div className="flex justify-between">
           <h2 className="text-[#132C8D] font-bold text-[16px] pl-4 pt-1 ">

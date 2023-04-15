@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+#test:hover{
+ transform:scale3d(1.05,1.05,1.05)
+}
 .heart {
     width: 80px;
     height: 80px;

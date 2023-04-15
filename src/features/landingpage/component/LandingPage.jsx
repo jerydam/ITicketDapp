@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import FeauturedOffer from './FeauturedOffer';
+import Testimony from './Testimonial';
 //import { Outlet, Link } from "react-router-dom";
 import Link from 'next/link'
 import Navbar from '../../../components/Navbar';
@@ -36,6 +37,26 @@ const LandingPage = () => {
 
  <div className='card rounded-lg bg-[#ffffff] shadow-inner w-11/12 m-auto flex flex-col mb-14 min-h-[440px] md:-mt-36 lg:-mt-28 relative'>
   <FeauturedOffer/>
+ <div className="flex flex-wrap justify-between">
+  <div className="w-full sm:w-1/2 md:w-1/4 p-4">
+    <h2 className="text-lg font-medium">Total Event</h2>
+    <p className="text-3xl font-bold mt-2">+100k</p>
+  </div>
+  <div className="w-full sm:w-1/2 md:w-1/4 p-4">
+    <h2 className="text-lg font-medium">Total Event</h2>
+    <p className="text-3xl font-bold mt-2">+100k</p>
+  </div>
+  <div className="w-full sm:w-1/2 md:w-1/4 p-4">
+    <h2 className="text-lg font-medium">Total Guest User</h2>
+    <p className="text-3xl font-bold mt-2">+250k</p>
+  </div>
+  <div className="w-full sm:w-1/2 md:w-1/4 p-4">
+    <h2 className="text-lg font-medium">Total NFT minted</h2>
+    <p className="text-3xl font-bold mt-2">+500k</p>
+  </div>
+</div>
+
+  <Testimony/>
 </div>
 
 </div>
