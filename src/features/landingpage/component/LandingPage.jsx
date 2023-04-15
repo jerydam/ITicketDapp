@@ -11,10 +11,10 @@ const LandingPage = () => {
 
           
         
-    <div class='flex flex-col bg-[#EFF2F9]'>
-  <div class="bg-cover bg-center landing-top-img text-white flex flex-col bg-[#000000]">
+    <div className='flex flex-col bg-[#EFF2F9]'>
+  <div className="bg-cover bg-center landing-top-img text-white flex flex-col bg-[#000000]">
   
- <div class='flex flex-col lg:flex-row lg:justify-between lg:items-center w-fullh justify-center px-4'>
+ <div className='flex flex-col lg:flex-row lg:justify-between lg:items-center w-fullh justify-center px-4'>
   <Navbar/>
 </div>
 

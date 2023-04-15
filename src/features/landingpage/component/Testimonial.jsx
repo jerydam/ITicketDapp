@@ -3,7 +3,7 @@ import React from 'react';
 function Testimonials() {
   return (
     <div className="container mx-auto px-4 py-12 lg:px-8 bg-[#5a0592] text-[#fff] font-boldrounded">
-        <div id="test" style={{transition:"1s ease-in-out"}}>
+        <div id="test" style={{transition:"1s ease-in-out",paddingLeft:"3%", paddingRight:"3%"}}>
       <h4 className="text-4xl text-center mb-8">How Our Users Feel</h4>
       <div className="flex flex-wrap justify-center -mx-4 lg:-mx-8">
         <div className="w-full lg:w-1/3 px-4 lg:px-8 mb-8 lg:mb-0">
