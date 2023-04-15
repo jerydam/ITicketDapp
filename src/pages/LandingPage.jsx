@@ -1,11 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
-import FeauturedOffer from './FeauturedOffer';
+//import FeauturedOffer from './FeauturedOffer';
 //import { Outlet, Link } from "react-router-dom";
 import Link from 'next/link'
-import Navbar from '../../../components/Navbar';
+import Navbar from '../components/Navbar';
+import Fetchi from '../features/landingpage/component/eventDetails';
+import Display from '../features/landingpage/component/childContracts';
 // import bgImage from './metaverse.jpg';
-import Fetch from '../../../pages/eventDetails';
+//import Fetch from '../../../pages/eventDetails';
 
 
 const LandingPage = () => {
@@ -32,7 +34,10 @@ const LandingPage = () => {
   </div>
 
  <div className='card rounded-lg bg-[#ffffff] shadow-inner w-11/12 m-auto flex flex-col mb-14 min-h-[440px] md:-mt-36 lg:-mt-28 relative'>
-  <Fetch/>
+
+  <Fetchi />
+  <Display contractAddress={"0x8858a3302910D7017fF92080a93B11AC1e6D2169"} />
+  8888888
 </div>
 
 </div>

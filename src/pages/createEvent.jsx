@@ -121,6 +121,12 @@ export default function MyForm() {
                 <input type="text" placeholder="Date of event" onChange={(e) => setDate(e.target.value)}/>
             <br/><br/>
 
+            <label className='text-white text-xl'>
+                Upload Event Flier:<br/>
+            </label>
+                <input type="file" placeholder="Upload event flier for NFT creation" onChange={(e) => setDate(e.target.value)}/>
+            <br/><br/>
+
             <button className="bg-[#ebdcfa] text-[#19072b] text-lg font-bold rounded-md py-3 px-8 hover:bg-[#8f8499] hover:text-white border-radius mb-5" type="submit">{createEventIsLoading || createWaitIsLoading
                 ? "Creating event..."
                 : "Create Event"}</button>

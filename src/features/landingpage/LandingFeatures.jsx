@@ -1,5 +1,5 @@
 import React from 'react'
-import LandingPage from './component/LandingPage'
+import LandingPage from '../../pages/LandingPage'
 const LandingFeatures = () => {
   return (
     <div>
