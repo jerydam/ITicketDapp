@@ -12,10 +12,11 @@ const LandingPage = () => {
           
         
     <div className='flex flex-col bg-[#EFF2F9]'>
+      <Navbar/>
   <div className="bg-cover bg-center landing-top-img text-white flex flex-col bg-[#000000]">
   
  <div className='flex flex-col lg:flex-row lg:justify-between lg:items-center w-fullh justify-center px-4'>
-  <Navbar/>
+  
 </div>
 
   
@@ -30,6 +31,9 @@ const LandingPage = () => {
       <div className='flex flex-col md:flex-row mt-10'>
         <Link href="/createid">
           <button className="bg-[#01022e] border border-[#a5fafd] mt-4 md:mt-8 lg:mt-10 rounded-md py-3 px-6 text-lg lg:text-xl hover:bg-[#052C5B] hover:text-white" type="submit">Create Event</button>
+        </Link>
+        <Link href="/request">
+          <button className="bg-[#01022e] border border-[#a5fafd] ml-6 mt-4 md:mt-8 lg:mt-10 rounded-md py-3 px-6 text-lg lg:text-xl hover:bg-[#052C5B] hover:text-white" type="submit">Request Event ID</button>
         </Link>
       </div>
     </div>

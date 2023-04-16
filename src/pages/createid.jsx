@@ -28,45 +28,14 @@ export default function MyForm() {
   const [poapName, setPoapName] = useState("");
   const [poapSymbol, setPoapSymbol] = useState("");
 
-  // const { config } = usePrepareContractWrite({
-  //     address: CONTRACT,
-  //     abi: ticketAbi,
-  //     functionName: "createID",
-  //     args: [regId, eventadminAddr ],
-  //   });
-  // const { data: eventData,isLoading:eventIsLoading, write: event } = useContractWrite(config);
-
-  // const { data: eventWaitData, isLoading: eventWaitIsLoading } =
-  //     useWaitForTransaction({
-  //       data: eventData?.hash,
-
-  //       onSuccess(data) {
-  //         console.log("IT IS SUCCESSFUL: ", data);
-  //       },
-
-  //       onError(error) {
-  //         console.log("Encountered error: ", error);
-  //       },
-  //     });
-
-  //     useEffect(() => {
-  //     if (eventData) {
-  //       console.log(eventData);
-  //     }
-  //   }, [eventData]);
-
-  // const handleSubmit = (e) => {
-  //     e.preventDefault();
-
-  //     event?.();
-  //   };
-
+  
   const { config: config2 } = usePrepareContractWrite({
     address: CONTRACT,
     abi: ticketAbi,
     functionName: "createEvent",
     args: [Id, fee, numberOfPart, eventUri, name, symbol, poapName, poapSymbol],
   });
+  
   const {
     data: createEventData,
     isLoading: createEventIsLoading,
