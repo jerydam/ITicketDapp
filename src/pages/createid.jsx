@@ -207,7 +207,7 @@ export default function MyForm() {
   return (
     <div>
       <Navbar />
-      <h1 className="font-bold text-center my-3 justify-center ">
+      <h1 className="font-bold font-weight:900 text-center my-3 justify-center ">
         Total Number Of Events created: {String(totalNoOfEvents)}
       </h1>
       <div className="flex flex-wrap">
