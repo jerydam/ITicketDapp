@@ -40,21 +40,21 @@ const Navbar = () => {
           isOpen ? "block" : "hidden"
         } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
       >
-        <div className="text-md ml-[420px] lg:flex-grow">
+        <div className="text-md ml-[300px] lg:flex-grow">
           <a
-            href="About"
+            href="#responsive-header"
             className="block mt-4 lg:inline-block lg:mt-0 text-gray-500 font-bold hover:text-white mr-10"
           >
             About
           </a>
           <a 
-            href="Docs"
+            href="#responsive-header"
             className="block mt-4 lg:inline-block mr-10 font-bold lg:mt-0 text-gray-500 hover:text-white"
           >
             Docs
           </a>
            <a 
-            href="Devs"
+            href="#responsive-header"
             className="block mt-4 lg:inline-block mr-10 font-bold lg:mt-0 text-gray-500 hover:text-white"
           >
             Devs
@@ -66,7 +66,7 @@ const Navbar = () => {
             Admin
           </a>  
         </div>
-        <div className="ml-auto">
+        <div className="ml-auto"> {/* added ml-auto class */}
           <Connect />
         </div>
         
