@@ -18,6 +18,22 @@ const EventDeets = () => {
   // const { address } = useAccount();
 
   const {
+    data: evtDetails,
+    isLoading: evtDetailIsLoading,
+    isError: evtIsError,
+  } = useContractRead({
+    address: eventAddress,
+    abi: childTicket,
+    functionName: "eventDetails",
+  });
+
+  useEffect(() => {
+    if (evtDetails) {
+      console.log(evtDetails);
+    }
+  }, [evtDetails]);
+
+  const {
     data: regData,
     isLoading: regIsLoading,
     write: register,
@@ -51,6 +67,8 @@ const EventDeets = () => {
   return (
     <div>
       <Navbar />
+      <h1>Event Details are : {evtDetails}</h1>
+
       <form onSubmit={handleSubmit}>
         <button
           className="bg-[green] border border-blue-300 text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5"
