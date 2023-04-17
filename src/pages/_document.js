@@ -5,8 +5,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="shortcut icon" href="/favicon.ico" />
-        
           <title>MetaSquare</title>
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
