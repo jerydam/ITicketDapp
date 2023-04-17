@@ -57,9 +57,8 @@ const handleSubmit = (e) => {
  <div className='bg-[#06001d]'> 
     <Navbar/> 
     
-    <div className="flex flex-row text-[#182507]   mx-6">
-      
-      <div className="bg-[#0a0213] border border-white mt-10 ml-20 text-center mb-5  rounded-md justify-center w-[500px]"><br/><br/><br/><br/><br/>
+      <div className="flex flex-wrap text-[#182507]  mx-2 text-center justify-center">
+          <div className="bg-[#000000] mt-5 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto"><br/><br/><br/><br/><br/>
        <h1 className='text-white font-semibold p-2 text-xl'>
       CREATE EVENT ID
     </h1>

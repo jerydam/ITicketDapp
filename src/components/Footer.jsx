@@ -15,7 +15,7 @@ import {
 const Footer = () => {
   return (
     <div className=" bottom-0  w-full overflow-clip">
-      <div className="bg-[#3b055b] justify-between  text-center pb-[100px] pt-[20px] ">
+      <div className="bg-[#53b3eb] justify-between  text-center pb-[100px] pt-[20px] ">
         <h3 className="text-white text-[32px] font-bold text-center">
           Subscribe Now!
         </h3>
@@ -44,7 +44,7 @@ const Footer = () => {
 
       <div className="bg-[#000000]">
        
-            <div className="mt-5 mx-auto flex text-[#fff] pt-4 justify-center gap-8">
+            <div className=" mx-auto flex text-[#fff] pt-4 justify-center gap-8">
               <a href="/" className="">
                 <FaFacebookF className="" size={30}/>
               </a>

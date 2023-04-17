@@ -19,6 +19,11 @@ const LandingPage = () => {
  
 </div>
 
+  
+
+
+
+
     <div className="text-center z-[1] m-auto flex flex-col justify-center items-center mt-[10vh]">
       <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">Re-Imagine The Future of Events</h1>
       <p className="text-white text-xl md:text-2xl lg:text-3xl mt-3">innovative NEW ways to connect with your audience</p>
@@ -37,19 +42,19 @@ const LandingPage = () => {
  <div className='card rounded-lg bg-[#ffffff] shadow-inner w-11/12 m-auto flex flex-col mb-14 min-h-[440px] md:-mt-36 lg:-mt-28 relative'>
   <FeauturedOffer/>
  <div className="flex flex-wrap justify-between">
-  <div className="w-full sm:w-1/2 md:w-1/4 p-4">
+  <div className="w-full sm:w-1/2 md:w-1/4 p-4 sm:text-start text-center">
     <h2 className="text-lg font-medium">Total Event</h2>
     <p className="text-3xl font-bold mt-2">+100k</p>
   </div>
-  <div className="w-full sm:w-1/2 md:w-1/4 p-4">
+  <div className="w-full sm:w-1/2 md:w-1/4 p-4 sm:text-start text-center">
     <h2 className="text-lg font-medium">Total Event</h2>
     <p className="text-3xl font-bold mt-2">+100k</p>
   </div>
-  <div className="w-full sm:w-1/2 md:w-1/4 p-4">
+  <div className="w-full sm:w-1/2 md:w-1/4 p-4 sm:text-start text-center">
     <h2 className="text-lg font-medium">Total Guest User</h2>
     <p className="text-3xl font-bold mt-2">+250k</p>
   </div>
-  <div className="w-full sm:w-1/2 md:w-1/4 p-4">
+  <div className="w-full sm:w-1/2 md:w-1/4 p-4 sm:text-start text-center">
     <h2 className="text-lg font-medium">Total NFT minted</h2>
     <p className="text-3xl font-bold mt-2">+500k</p>
   </div>

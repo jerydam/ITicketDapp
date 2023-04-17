@@ -40,7 +40,7 @@ const Navbar = () => {
           isOpen ? "block" : "hidden"
         } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
       >
-        <div className="text-md ml-[300px] lg:flex-grow">
+        <div className="text-md ml-[420px] lg:flex-grow">
           <a
             href="About"
             className="block mt-4 lg:inline-block lg:mt-0 text-gray-500 font-bold hover:text-white mr-10"

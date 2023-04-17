@@ -7,6 +7,7 @@ import { publicProvider } from 'wagmi/providers/public';
 import '../../styles/globals.css';
 import Pagelayout from '../pagelayout/pagelayout';
 
+
 const { chains, provider } = configureChains(
   [polygonMumbai],
   // https://eth-goerli.g.alchemy.com/v2/U4Q5B-2_p_WUMX2gBCL_ZYNpaRetbTgd

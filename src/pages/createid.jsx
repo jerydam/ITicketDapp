@@ -176,13 +176,11 @@ export default function MyForm() {
   return (
     <div>
       <Navbar />
-      <h1 className="font-bold text-center my-3 justify-center ">
+      <h1 className="font-bold text-center mt-5 my-3 justify-center ">
         Total Number Of Events created: {String(totalNoOfEvents)}
       </h1>
-      <div className="flex flex-wrap">
-        <div></div>
-        <div className="flex flex-wrap text-[#182507]  mx-2">
-          <div className="bg-[#8f32e6] mt-10 ml-40 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
+        <div className="flex flex-wrap text-[#182507]  mx-2 text-center justify-center">
+          <div className="bg-[#000000] mt-5 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
             <h1 className="text-white font-bold text-center my-3 justify-center ">
               CREATE EVENT
             </h1>
@@ -288,7 +286,7 @@ export default function MyForm() {
               <br />
 
               <button
-                className="bg-[green] border border-blue-300 text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5"
+                className="bg-[#1b6ce7] border border-blue-300 text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5"
                 type="submit"
               >
                 {createEventIsLoading || createWaitIsLoading
@@ -298,8 +296,8 @@ export default function MyForm() {
             </form>
           </div>
         </div>
-        <div className="flex flex-row text-[#182507]  mx-2">
-          <div className="bg-[#8f32e6] mt-10 ml-40 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
+      <div className="flex flex-wrap text-[#182507]  mx-2 text-center justify-center">
+          <div className="bg-[#000000] mt-5 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
             <h1 className="text-white font-bold text-center my-3 justify-center ">
               Open Registration
             </h1>
@@ -343,7 +341,7 @@ export default function MyForm() {
               <br />
 
               <button
-                className="bg-[green] border border-blue-300 text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5"
+                className="bg-[#0e11bd] border border-blue-300 text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5"
                 type="submit"
               >
                 {isLoadingStartEndRegistration || startWaitIsLoading
@@ -353,17 +351,17 @@ export default function MyForm() {
             </form>
           </div>
         </div>
-        <hr />
+        
 
-        <div className="flex flex-row text-[#182507]  mx-6">
-          <div className="bg-[#8f32e6] mt-10 ml-40 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
+    <div className="flex flex-wrap text-[#182507]  mx-2 text-center justify-center">
+          <div className="bg-[#000000] mt-5 text-center rounded-md mb-5 text-[#182507] justify-center w-[500px] h-auto">
             <h1 className="text-white font-bold text-center my-3 justify-center ">
               End Registration
             </h1>
 
             <form onSubmit={handleSubmit4}>
               <button
-                className="bg-[green] border border-blue-300 text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5"
+                className="bg-[#0b2185] border border-blue-300 text-white rounded-md p-2 hover:bg-light-blue hover:text-white border-radius mb-5"
                 type="submit"
               >
                 {isLoadingEndRegistration || endWaitIsLoading
@@ -373,7 +371,7 @@ export default function MyForm() {
             </form>
           </div>
         </div>
-      </div>
+      
     </div>
   );
 }
