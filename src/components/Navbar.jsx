@@ -9,7 +9,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex bg-light-blue  flex-wrap">
+    <nav className="flex bg-[#01041a]  flex-wrap">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
         <a href="">
           <span className="font-bold text-xl text-[#fff] tracking-tight ml-2">
@@ -19,7 +19,7 @@ const Navbar = () => {
       </div>
       <div className="block lg:hidden ml-auto">
         <button
-          className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-500 hover:text-white hover:border-white"
+          className="flex items-center px-3 py-2 border rounded text-white border-white hover:text-white hover:border-white"
           onClick={toggleMenu}
           style={{ marginLeft: '10px' }} // added margin to move button towards left
         >
@@ -43,25 +43,25 @@ const Navbar = () => {
         <div className="text-md ml-[300px] lg:flex-grow">
           <a
             href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-500 font-bold hover:text-white mr-10"
+            className="block mt-4 lg:inline-block lg:mt-0 text-white font-bold hover:text-white mr-10"
           >
             About
           </a>
           <a 
             href="#responsive-header"
-            className="block mt-4 lg:inline-block mr-10 font-bold lg:mt-0 text-gray-500 hover:text-white"
+            className="block mt-4 lg:inline-block mr-10 font-bold lg:mt-0 text-white hover:text-white"
           >
             Docs
           </a>
            <a 
             href="#responsive-header"
-            className="block mt-4 lg:inline-block mr-10 font-bold lg:mt-0 text-gray-500 hover:text-white"
+            className="block mt-4 lg:inline-block mr-10 font-bold lg:mt-0 text-white hover:text-white"
           >
-            Devs
+            Developers
           </a>
           <a
             href="/admin"
-            className="block mt-4 lg:inline-block font-bold lg:mt-0 text-gray-500 mr-20 hover:text-white"
+            className="block mt-4 lg:inline-block font-bold lg:mt-0 text-white mr-20 hover:text-white"
           >
             Admin
           </a>  

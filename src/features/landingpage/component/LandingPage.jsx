@@ -28,7 +28,7 @@ const LandingPage = () => {
       <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">Re-Imagine The Future of Events</h1>
       <p className="text-white text-xl md:text-2xl lg:text-3xl mt-3">innovative NEW ways to connect with your audience</p>
 
-      <div className='flex flex-col md:flex-row mt-10'>
+      <div className='flex flex-col justify-center items-center md:flex-row mt-10'>
         <Link href="/createid">
           <button className="bg-[#01022e] border border-[#a5fafd] mt-4 md:mt-8 lg:mt-10 rounded-md py-3 px-6 text-lg lg:text-xl hover:bg-[#052C5B] hover:text-white" type="submit">Create Event</button>
         </Link>
