@@ -5,8 +5,46 @@ import Testimony from './Testimonial';
 //import { Outlet, Link } from "react-router-dom";
 import Link from 'next/link'
 import Navbar from '../../../components/Navbar';
+import {
+  erc20ABI,
+  useAccount,
+  useContractRead,
+  useContractWrite,
+  usePrepareContractWrite,
+  useWaitForTransaction,
+} from "wagmi";
+import { useState, useEffect } from "react";
+// import ticketAbi from "../utils/ticketFactoryAbi.json";
+import ticketAbi from '../../../utils/ticketFactoryAbi.json'
+
 
 const LandingPage = () => {
+  const CONTRACT = "0x8197Ac59CbC142236bdAb2C91d420A528c592750";
+  
+
+  const {
+    data: showTotalEventAddresses,
+    isLoading: numberOfEventIsLoading,
+    isError: numberIsError,
+  } = useContractRead({
+    address: CONTRACT,
+    abi: ticketAbi,
+    functionName: "showTotalEventAddresses",
+    onSuccess(data){
+      setActiveEvent(data);
+      console.log(data)
+
+    }
+  });
+  const [activeEvent, setActiveEvent] = useState([]);
+
+
+
+
+
+
+
+
   return (
 
           
@@ -40,7 +78,17 @@ const LandingPage = () => {
   </div>
 
  <div className='card rounded-lg bg-[#ffffff] shadow-inner w-11/12 m-auto flex flex-col mb-14 min-h-[440px] md:-mt-36 lg:-mt-28 relative'>
-  <FeauturedOffer/>
+  {/* <FeauturedOffer/> */}
+          <h3 className="text-[32px] text-[] mt-4 text-center font-bold">Event</h3>
+          <div className='bg-[#e9e0e0] grid grid-cols-3'>
+  { 
+  activeEvent?.map((e,i)=>{
+    return(<div key={i}>
+          <FeauturedOffer key={i} contractAddress={e}/>
+    </div>)
+  })
+  }
+  </div>
  <div className="flex flex-wrap justify-between">
   <div className="w-full sm:w-1/2 md:w-1/4 p-4 sm:text-start text-center">
     <h2 className="text-lg font-medium">Total Event</h2>
