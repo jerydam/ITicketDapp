@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Connect from './Connect';
+import Connect from "./Connect";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -8,12 +9,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex bg-light-blue  flex-wrap">
+    <nav className="flex flex-wrap items-center justify-between bg-light-blue">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
-      
-        <span className="font-bold text-xl text-[#fff] tracking-tight ml-2">
+        <a href="">
+          <span className="font-bold text-xl text-[#fff] tracking-tight ml-2">
             <span className="text-5xl text-red">.</span>METASQUARE
-        </span>
+          </span>
+        </a>
       </div>
       <div className="block lg:hidden">
         <button
@@ -26,45 +28,50 @@ const Navbar = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <title>Menu</title>
-            <path
-              d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
-            />
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
           </svg>
         </button>
       </div>
       <div
         className={`${
           isOpen ? "block" : "hidden"
-        } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
+        } w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto`}
       >
-        <div className="text-md ml-[500px]  lg:flex-grow">
+        <div className="text-md lg:flex-grow">
           <a
             href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-500 hover:text-white mr-10"
+            className="block mt-4 lg:inline-block lg:mt-0 text-gray-500 hover:text-white mr-10 sm:ml-[500px] lg:ml-0"
           >
             About
           </a>
-          <a 
+          <a
             href="#responsive-header"
-            className="block mt-4 lg:inline-block mr-10 lg:mt-0 text-gray-500 hover:text-white"
+            className="block mt-4 lg:inline-block mr-10 lg:mt-0 text-gray-500 hover:text-white sm:ml-[500px] lg:ml-0"
           >
             Docs
           </a>
           <a
             href="/admin"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-500 mr-20 hover:text-white"
+            className="block mt-4 lg:inline-block lg:mt-0 text-gray-500 mr-20 hover:text-white sm:ml-[500px] lg:ml-0"
           >
             Admin
-          </a>  
+          </a>
         </div>
         <Connect />
       </div>
+      <style jsx>{`
+        @media (max-width: 767px) {
+          .flex-col {
+            display: flex;
+            flex-direction: column;
+          }
+          .flex-col .nav-link {
+            margin-top: 10px;
+          }
+        }
+      `}</style>
     </nav>
   );
 };
 
 export default Navbar;
-
-
-
-

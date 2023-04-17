@@ -12,17 +12,12 @@ const LandingPage = () => {
           
         
     <div className='flex flex-col bg-[#EFF2F9]'>
-      <Navbar/>
+     <Navbar/>
   <div className="bg-cover bg-center landing-top-img text-white flex flex-col bg-[#000000]">
-  
+    
  <div className='flex flex-col lg:flex-row lg:justify-between lg:items-center w-fullh justify-center px-4'>
-  
+ 
 </div>
-
-  
-
-
-
 
     <div className="text-center z-[1] m-auto flex flex-col justify-center items-center mt-[10vh]">
       <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">Re-Imagine The Future of Events</h1>
