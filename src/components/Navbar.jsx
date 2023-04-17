@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <nav className="flex bg-light-blue  flex-wrap">
       <div className="flex items-center flex-shrink-0 text-white mr-6">
-        <a href="">
+        <a href="/">
           <span className="font-bold text-xl text-[#fff] tracking-tight ml-2">
               <span className="text-5xl text-red">.</span>METASQUARE
           </span>
