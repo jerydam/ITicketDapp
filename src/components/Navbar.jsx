@@ -40,21 +40,21 @@ const Navbar = () => {
           isOpen ? "block" : "hidden"
         } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
       >
-        <div className="text-md ml-[500px] lg:flex-grow">
+        <div className="text-md ml-[420px] lg:flex-grow">
           <a
-            href="#responsive-header"
+            href="About"
             className="block mt-4 lg:inline-block lg:mt-0 text-gray-500 font-bold hover:text-white mr-10"
           >
             About
           </a>
           <a 
-            href="#responsive-header"
+            href="Docs"
             className="block mt-4 lg:inline-block mr-10 font-bold lg:mt-0 text-gray-500 hover:text-white"
           >
             Docs
           </a>
            <a 
-            href="#responsive-header"
+            href="Devs"
             className="block mt-4 lg:inline-block mr-10 font-bold lg:mt-0 text-gray-500 hover:text-white"
           >
             Devs
@@ -66,7 +66,10 @@ const Navbar = () => {
             Admin
           </a>  
         </div>
-        <Connect />
+        <div className="ml-auto">
+          <Connect />
+        </div>
+        
       </div>
     </nav>
   );
